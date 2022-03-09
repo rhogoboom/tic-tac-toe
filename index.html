@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+        <img src="icons/settings_white_36dp.svg" alt="" class="settings-button">
+        <h1>Tic Tac Toe</h1>
+        <img src="icons/light_mode_white_36dp.svg" alt="" class="light-mode-button">
+    </header>
+
+    <div class="board">
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+    </div>
+    <footer>
+        <p><a href="https://github.com/rhogoboom">Made by Ohyoboom</a></p>
+    </footer>
+    <div class="modal settings-modal">
+        <div class="settings-modal-header">
+            <button class="close-modal-button">X</button>
+            <h3>Settings</h3>
+        </div>
+
+        <div class="options-wrapper">
+            <h4>Player 1</h4>
+            <ul class="player-options player-1">
+
+                <li>
+                    <span>Type:</span>
+                    <button type="button" class="player-type-toggle" data-playernum="1"
+                        data-playertype="human">Human</button>
+                </li>
+                <li>
+                    <span>Symbol:</span>
+                    <button type="button" class="player-symbol-toggle" data-playernum="1" data-playersymbol="X">X</button>
+                </li>
+            </ul>
+            <h4>Player 2</h4>
+            <ul class="player-options player-2">
+                <li>
+                    <span>Type:</span>
+                    <button type="button" class="player-type-toggle" data-playernum="2"
+                        data-playertype="computer">Computer</button>
+                </li>
+                <li>
+                    <span>Symbol:</span>
+                    <button type="button" class="player-symbol-toggle" data-playernum="2" data-playersymbol="O">O</button>
+                </li>
+            </ul>
+        </div>
+
+
+        <button type="button" class="reset-game">Restart Game</button>
+
+
+    </div>
+    <div class="modal game-over-modal">
+        <h2>Game over!</h2>
+        <p></p>
+        <button type="button">Play again?</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

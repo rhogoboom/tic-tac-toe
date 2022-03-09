@@ -1,0 +1,244 @@
+:root {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root.dark {
+    
+    --main-back-color: #121212;
+    --main-color-triplet: 0, 0, 7;
+    --test: hsl(0, 0, 18);
+    --header-color: rgb(35, 35, 35);
+    --primary-text: rgb(255, 255, 255);
+    --primary-text-val: 255, 255, 255;
+    --space-background: rgb(43, 43, 43);
+    --space-clicked: rgb(100, 100, 100);
+    --modal-background: rgb(35, 35, 35);
+    --modal-button-color: 100, 100, 100;
+    
+}
+
+:root.light {
+    --main-back-color: rgb(255, 255, 255);
+    --main-color-triplet: 0, 0, 7;
+    --test: hsl(0, 0, 18);
+    --header-color: rgb(240, 240, 240);
+    --primary-text: rgb(12, 12, 12);
+    --primary-text-val: 12, 12, 12;
+    --space-background: rgb(200, 200, 200);
+    --space-clicked: rgb(180, 180, 180);
+    --modal-background: rgb(240, 240, 240);
+    --modal-button-color: 180, 180, 180;
+}
+
+body {
+    display: grid;
+    margin: 0;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    justify-items: center;
+    background-color: var(--main-back-color);
+    color: var(--primary-text);
+
+}
+
+header {
+    background-color: var(--header-color);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-self: stretch;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+h1 {
+    justify-self: stretch;
+    text-align: center;
+    background-color: var(--header-color);
+    margin: 0;
+    padding: 2rem;
+}
+
+header > img {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--primary-text);
+}
+
+a:hover {
+    text-shadow: aqua;
+}
+
+button {
+    font-family: inherit;
+    color: var(--primary-text)
+}
+
+button:hover {
+    background-color: rgba(var(--modal-button-color), 0.8);
+}
+
+ul {
+    list-style: none;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+    width: 40%;
+    height: 80%;
+}
+
+
+.space {
+    background-color: var(--space-background);
+    color: var(--primary-text);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 64px;
+
+}
+
+.space:hover{
+    /* outline: 0.5rem solid limegreen; */
+    border: 0.5rem solid limegreen;
+    
+}
+
+.clicked {
+    background-color: var(--space-clicked);
+}
+
+
+/* Modal Styles */
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    display: none;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: var(--modal-background);
+    color: var(--primary-text);
+}
+
+
+.game-over-modal {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.game-over-modal > button {
+    width: 30%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(var(--modal-button-color));
+    
+}
+
+.game-over-modal > button:hover {
+    background-color: rgba(var(--modal-button-color), 0.8);
+    cursor: pointer;
+}
+
+.settings-modal {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.settings-modal-header {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.close-modal-button {
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: var(--space-clicked);
+    color: var(--primary-text);
+}
+
+.settings-modal-header > h3 {
+    justify-self: center;
+}
+
+.options-wrapper {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+
+}
+
+.options-wrapper > h4 {
+    grid-row: 1;
+}
+
+.options-wrapper > ul {
+    padding-left: 3rem;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: start;
+    gap: 1rem;
+}
+
+.options-wrapper > ul > li {
+    display: grid;
+    grid-template-columns: 60px auto;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.options-wrapper > ul > li > button {
+    height: 3rem;
+    width: 5rem;
+    background-color: var(--space-clicked);
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.settings-modal > .player-options {
+    grid-row: 2;
+}
+
+.reset-game {
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--space-clicked);
+    width: fit-content;
+    padding: 3rem;
+    align-self: center;
+    justify-self: center;
+}
+
